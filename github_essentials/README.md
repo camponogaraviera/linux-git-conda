@@ -24,6 +24,7 @@
 - [Issue Tracker](#issue-tracker)
 - [Pull Request](#pull-request)
 - [Clean Up Commit History](#clean-up-commit-history)
+- [GitHub Versioning](#github-versioning)
 - [Atom IDE](#atom-ide)
 
 <!--- ############################################################################################################################################### -->
@@ -665,6 +666,17 @@ git branch -D dev  # delete the old branch
 git branch -m dev  # rename the current branch to dev
 git push -u origin dev --force
 ```
+
+<!--- ############################################################################################################################################### -->
+
+# GitHub Versioning
+
+The development workflow includes:
+- `dev` (development) branch: to work on bugs and features.
+- `staging` branch: quality assurance and testing.
+- `stable/0.0.x` branch: work is ready for deployment.
+
+The pre-release related to a development branch reads `<package-name> 0.0.1-early-access`. After completing the User Acceptance Testing (UAT) process, one creates a `stable/0.0.2` branch with the following release: `<package-name> 0.0.2`.
 
 <!--- ############################################################################################################################################### -->
 
