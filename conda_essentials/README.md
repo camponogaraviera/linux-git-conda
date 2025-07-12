@@ -65,7 +65,7 @@ conda update -yn base conda
 - Create a new environment with an exact Python version (e.g., V3.13.2):
 
 ```sh
-conda create -yn <env_name> python==3.13.2
+conda create -yn <env_name> python==3.13.5
 ```
 
 - Add `conda-forge` as a default channel:
@@ -77,7 +77,7 @@ conda config --add channels conda-forge
 - Create an environment from an `environment.yml` file:
 
 ```sh
-conda env create -n <env_name> -f environment.yml
+conda env create -f environment.yml
 ```
 
 - Create an environment from a spec file:
@@ -93,7 +93,7 @@ conda env remove -n <env_name>
 ```
 or (alternative due to issue [#3215](https://github.com/conda/conda/issues/3215))
 ```sh
-conda remove -n <env_name> --all
+conda remove -yn <env_name> --all
 ```
 
 ## Activating & Deactivating
@@ -143,8 +143,12 @@ conda update <package_name>
 conda update -n <env_name> <package_name>
 ```
 
-- Update an environment after modifying environment.yml:
+- Update the environment after modifying the environment.yml file:
 
+```sh
+conda env update -n <env_name> --file environment.yml --prune
+```
+or (shorthand)
 ```sh
 conda env update -f environment.yml --prune
 ```
